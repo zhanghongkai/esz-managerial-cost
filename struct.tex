@@ -393,6 +393,9 @@ homogeneous goods in equilibrium.  That is, our structural estimates
 raise the possibility that supply-side rather than demand-side
 frictions drive price dispersion.
 
+A recent industrial-organization literature documents the surprising insensitivity of chain stores' prices to local-market conditions (see Hitsch, Horacsu, and Lin 2017; DellaVigna and Gentzkow 2017; and and Adams and Williams 2018). 
+DellaVigna and Gentzkow (2017) suggest that managerial costs provide the best explanation of this uniformity. Adams and Williams (2018) compute bounds on the fixed cost of setting up a richer pricing system. Our findings echo these, attributing the invariance of prices across time (rather than space) to managerial costs. We estimate the manager's variable cost of attention and price changing rather than the system-wide cost of instituting a richer pricing scheme. 
+
 Our paper is related to several subfields outside of industrial
 organization. Substantively, our analysis is related to a large
 literature in macroeconomics on sticky prices, including notable
@@ -667,8 +670,8 @@ estimated error variance as a measure of the volatility.  The
 definitions of the remaining variables are self-explanatory.
 
 Turning to the descriptive statistics, we see that the average price
-for a memory module in our sample was \$69, with a considerable
-standard deviation of 35.1. Most of this variation is over time, with
+for a memory module in our sample was \$70.1, with a considerable
+standard deviation of 34.6. Most of this variation is over time, with
 prices typically above \$100 at the beginning of the period and down
 in the \$20s by the end, mirroring a large decline in the wholesale
 cost of these modules. The mean spell between price changes was 117.55
@@ -909,7 +912,7 @@ is the vector over $i$ of firms' strategies $\sigma_i$, $\delta$ is
 the discount factor,
 \begin{equation}
 \label{pi}
-\pi_{it} = \pi(s_t, \sigma(s_t), \theta)
+\pi_{it} = \pi_i(s_t, \sigma(s_t), \theta)
 \end{equation}
 is the static profit function, reflecting the payoff from one period
 (one hour in our empirical setting) of play, and $\theta$ is a vector
@@ -2160,7 +2163,7 @@ expectation, $E_{s\in\hat{S}} [ V_{i}(s;\hat{\sigma},\theta )]$, is
 \label{sim_eq}
 \widehat{EV}_i (\hat{\sigma},\theta ) = \frac{1}{MN} \sum_{m = 1}^M
 \sum_{n=1}^N \sum_{t_{mn}=0}^{\min\{T,720\}} \delta^{t_{mn}}
-\pi(s_{t_{mn}}, \hat{\sigma}(s_{t_{mn}}),\theta).
+\pi_i(s_{t_{mn}}, \hat{\sigma}(s_{t_{mn}}),\theta).
 \end{equation}
 There are three summations in \eqref{sim_eq}. The first sum simulates
 the expectation over initial states represented by the
@@ -2183,7 +2186,7 @@ empirical analogue $\widehat{EV}_i (s;\tilde{\sigma}_i,
 to the estimated policy function $\hat{\sigma}$, firm $i$ deviates to
 the policy function $\tilde{\sigma}_i \in
 PF(\alpha_{\tau},\beta_{\tau},C_k)$ in the simulation, resulting in
-profit $\pi(s_{t_{mn}}, \tilde{\sigma}_i(s_{t_{mn}}),
+profit $\pi_i(s_{t_{mn}}, \tilde{\sigma}_i(s_{t_{mn}}),
 \hat{\sigma}_{-i}(s_{t_{mn}}),\theta)$ as the new summand in
 \eqref{sim_eq}.
 
@@ -2338,6 +2341,8 @@ expressions were fairly precisely estimated in Ellison and Ellison
 
 \frenchspacing
 
+\item Adams, Brian and Kevin R. Williams. (2018) ``Zone Pricing in Retail Oligopoly,'' forthcoming, American Economic Journal: Microeconomics.
+
 \item Aguirregabiria, Victor and Pedro Mira. (2007) ``Sequential
   Estimation of Dynamic Discrete Games,'' {\it Econometrica} 75:
   1--53.
@@ -2411,12 +2416,17 @@ expressions were fairly precisely estimated in Ellison and Ellison
   Non-price Competition in the Online Book Industry,'' {\it Journal of
     Industrial Economics} 50: 351--367.
 
+\item Cleveland, William S. (1979) ``Robust Locally Weighted Regression and Smoothing Scatterplots,'' {\em Journal of the American Statistical Association} 74: 829--836.
+
 \item Cyert, Richard and James March. (1963) {\it Behavioral Theory of
   the Firm}.  Oxford: Blackwell Publishers.
 
 \item Davis, Michael C. and James D. Hamilton. (2004) ``Why Are Prices
   Sticky? The Dynamics of Wholesale Gasoline Prices,'' {\it Journal of
     Money, Credit and Banking} 36: 17--37. 
+
+\item DellaVigna, Stefano, and Matthew Gentzkow. (2017) ``Uniform Pricing in
+US Retail Chains,'' NBER working paper no.~23996.
 
 \item Doyle, Joseph, Erich Muehlegger, and Krislert
   Samphantharak. (2010) ``Edgeworth Cycles Revisited,'' {\em Energy
@@ -2459,6 +2469,8 @@ expressions were fairly precisely estimated in Ellison and Ellison
 
 \item Heckman, James. (1979) ``Sample Selection Bias as a
   Specification Error,'' {\em Econometrica} 47: 153--161.
+
+\item Hitsch, G\"{u}nter J., Ali Hortacsu, and Xiliang Lin. (2017) ``Prices and Promotions in U.S. Retail Markets: Evidence from Big Data,'' Chicago-Booth working paper no.~17--18.
 
 \item Hosken, Daniel S., Robert S. McMillan, and Christopher
   T. Taylor. (2008) ``Retail Gasoline Pricing: What Do We Know?'' {\it
