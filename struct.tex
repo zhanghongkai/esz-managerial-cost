@@ -1066,7 +1066,7 @@ We thus model price changes as coming from a two-step process. The
 manager knows some components of the market state vector at all times,
 information he receives essentially ``for free.''  Based on these
 state variables, the manager's first step is to decide whether to
-attend to the market to gather information or perform calculations
+attend to the market to gather information and perform calculations
 needed for a pricing decision. We will call this behavior
 ``monitoring'' and denote the decision to do so with the indicator
 function $\Monitor_{it}$.  In our setting, we think of monitoring as
@@ -1078,7 +1078,8 @@ current rank and the distribution of competitors' prices, and computes
 the new desired price. If the new desired price is different from the
 current price and the costs of changing it are justified, then he
 enters it in the Pricewatch form, and changes it on his own website,
-again involving costs in terms of cognition and time.
+again involving costs in terms of cognition and time. We will call this
+second behavior ``price change.''
 
 The two-step process can account for periods of excess inertia, during
 which the manager keeps price constant even though market conditions
@@ -1200,8 +1201,8 @@ the actual $\Delta_{it}^*$ by specifying cut points along the real
 line
 \begin{equation}
 \label{C}
-\cdots < \cut{-5} < \cut{-4} < \cut{-3} < \cut{-2} < \cut{-1} <
-\cut{0} < \cut{1} < \cut{2} < \cut{3} < \cut{4} < \cut{5} < \cdots .
+\cdots < \cut{-5} < \cut{-4} < \cut{-3} < \cut{-2} < \cut{-1} < \cut{1} 
+< \cut{2} < \cut{3} < \cut{4} < \cut{5} < \cdots .
 \end{equation}
 Then
 \begin{equation}
@@ -1284,8 +1285,12 @@ functions of the included variables, interactions of them, and
 additional variables such as the characteristics of neighboring firms
 in the Pricewatch ranking. More generally, one might worry whether a
 reduced-form policy function could ever capture the intricacies
-involved in full-blown expected value maximization each period.  We
-argue that our approach still has some appeal in our empirical
+involved in full-blown expected value maximization each period and
+therefore suggest some more flexible methods such as a random forest
+model taking many possible inputs all in once, which can mostly nest
+our two-stage model. 
+
+We argue that our approach still has some appeal in our empirical
 setting. First, our approach is computationally much less burdensome
 than a fully rational model. Second, it is reasonable to suppose
 managers used fairly simple rules of thumb to make the high-frequency
@@ -1296,16 +1301,11 @@ checking websites and calculating and typing in new prices involved in
 the managerial actions.  Third, as discussed in
 Section~\ref{ss:Policy_Fit}, we have encouraging results from a
 goodness of fit test to determine the match between simulations from
-our estimated strategies and observations in the data. 
-
-XXXXXXXXXXXXXXXXX HONGKAI, SEEMS LIKE WE NEED TO BUILD ON THIS TO EXPLAIN IT IF WE MENTION IT XXXXXXX
-Finally, we
-applied a machine-learning method (gradient-boosted machine) to
-generate a policy function without imposing functional-form
-restrictions on the included variables. Goodness of fit was not
-significantly improved by the machine-learning method relative to our
-reported policy function. XXX WHERE DOES THIS COME FROM? MORE ON
-THIS. XXX
+our estimated strategies and observations in the data. Finally, a random
+forest model, for example, albeit powerful in prediction accuracy, would
+not have as useful interpretations for our structural estimation. We note,
+however, incorporating machine learning methods in dynamic structural
+estimation is a very exciting area to explore in the future.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1330,7 +1330,8 @@ experiments that the maximum likelihood estimator of the ZIOP performs
 well in finite samples. While we adopted the ZIOP specification and
 chose the variables appearing in the each stage to best reflect our
 understanding of the empirical setting informed by manager interviews,
-formal Vuong (1989) tests of non-nested models reported below support
+formal Vuong (1989) tests of non-nested models reported in 
+Section~\ref{ss:Policy_Fit} support
 the inclusion of a monitoring stage to the price-change equation and
 the support our choice of variables to include in the different
 stages.
@@ -1380,9 +1381,9 @@ need to estimate thresholds down to $\cut{-5}$ and up to $\cut{5}$.
 
 Though the dependent variable $\Monitor_{it}$ in the monitoring
 equation \eqref{monitoring} is not itself observable, the coefficients
-$\alpha_{\tau}$ can still be estimated because the dependent variable
-$\Delta_{it}$ in the price-change equation \eqref{pricechange} is
-observable, and $\Monitor_{it}$ enters that equation through
+$\alpha_{\tau}$ of this equation can still be estimated because 
+$\Monitor_{it}$ affects the distribution of observed price changes
+or lack thereof through the latent price change equation
 \eqref{latentpricechange}. 
 
 The monitoring and price-changing equations combine to produce a
@@ -1543,9 +1544,9 @@ using equations \eqref{base} and \eqref{upsell}. Because monetary
 profits are not observed even in the actual data, they have to be
 estimated in both cases---using simulated prices in the former case
 and actual prices in the latter. Because the figure displays the
-results separately for each initial state $s$, each average is now
-taken only over initial observations at the $it$ level that qualify
-for state $s$.
+results separately for each rank and margin of initial state $s$,
+each average is now taken only over initial observations at the $it$ level that qualify
+for such initial conditions.
 
 Panel~A compares the simulated to actual monetary profit going forward
 for 720 hours conditional on rank in the initial period. The solid
@@ -1576,8 +1577,6 @@ properly incorporate the firm's future price adjustments and the
 cascade of rival responses. This comparison suggest that our policy
 function has likely captured this dynamic correctly.
 
-XXXXXXXXXXXXXXXXXX MY POOR ATTEMPT AT VUONG TABLE. NEEDS HONGKAI'S ATTENTION
-
 Table~\ref{t:vuong} provides an additional assessment of the policy
 function's fit using formal Vuong (1989) tests of model closeness. The
 Vuong (1989) test statistic $Z$ compares the model's likelihoods after
@@ -1603,22 +1602,18 @@ specified in the preferred Model~A but omits monitoring equation
 models, model~D is a simple ordered probit (OP) model.
 
 In cases of nested or partially overlapping models, the Vuong $Z$
-statistic has a complex distribution, equal to a weighted sum of chi
+statistic has a complex distribution, related to a weighted sum of chi
 squares where the weights are eigenvalues of a matrix of conditional
 expectations, leading authors to provide a subjective evaluation of
 the level of the $Z$ statistic rather than directly computing its
 $p$-value. We see that the test statistic is enormous for the
-comparison of the OP model omitting monitoring against any of the ZIOP
-models. This suggests that including the monitoring equation produces
-a substantially better fit. The preferred ZIOP specification has a
+comparison of the OP model omitting monitoring (model D) against any of the ZIOP
+models (models A--C). This suggests that including the monitoring equation produces
+a substantially better fit. The preferred ZIOP specification (model A) has a
 considerable $Z$ statistic of 3.20 and 3.92 when tested against the
-alternatives that either shift or delete variables from the monitoring
+alternatives that either shift (model B) or delete variables (model C) from the monitoring
 equation. This provides suggestive evidence that careful placement of
 the variables in the correct equations matters for fit.
-
-XXX ARE SOME OF THESE COMPARISONS IN FACT NESTED? IF SO, SHOULD
-DESIGNATE WHICH ARE AND WHICH AREN'T AND EXPRESS SIGNIFICANCE FOR
-THOSE WHICH WE KNOW THE DISTRIBUTION.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
