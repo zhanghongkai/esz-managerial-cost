@@ -803,7 +803,7 @@ between price changes. The distribution looks similar for types~1
 and~3. These frequent price changers necessarily have shorter
 spells. Most of the mass is concentrated in spells shorter than 200
 hours. The mass for type~2 firms spreads out more uniformly over
-longer spells, even as high as 600 hours. 
+longer spells, even as high as 600 hours.
 
 The distribution of spells that we report has a shape similar to those
 previously documented, but with a compressed scale. For instance, the
@@ -846,9 +846,9 @@ continuous, on the order of once per week rather than each hour. This
 pricing inertia could be due in principle to many factors. The integer
 constraint on prices could combine with only slowly moving market
 forces to produce the infrequent price changes. Perhaps firms are
-reluctant to engender a rival response to a price cut. Figure~\ref{f:time}
-provides evidence that the inertia is due at least in part to costs of
-managerial activity.
+reluctant to engender a rival response to a price
+cut. Figure~\ref{f:time} provides evidence that the inertia is due at
+least in part to costs of managerial activity.
 
 The figure plots the residual probability of a price change (after
 partialling out other covariates as controls) during each hour
@@ -860,9 +860,9 @@ the same national demand factors. In fact the probability functions
 peak at different points, at 11 a.m.\ for East Coast and 8 p.m.\ for
 West Coast retailers.
 
-Interestingly, the peak for the West Coast retailers is not
-simply shifted by the three-hour difference between Eastern Time and
-the local time for West Coast retailers, as might be expected if the
+Interestingly, the peak for the West Coast retailers is not simply
+shifted by the three-hour difference between Eastern Time and the
+local time for West Coast retailers, as might be expected if the
 retailers on the two coasts served separate markets but faced the same
 pattern of managerial costs during the day. Instead, the peak on the
 West Coast is shifted by ten hours, to 8 p.m. Eastern Time, which is 5
@@ -980,7 +980,7 @@ institutional details and estimates from Ellison and Ellison (2009a):
 \end{equation}
 where
 \begin{eqnarray}
-\Base_{it} & = & Q(\Rank_{it}) (\Price_{it} - \Cost_t) \label{base} \\
+\Base_{it} & = & Q(\Rank_{it}) (\Price_{it} - \Cost_t) \label{base} \\ 
 \Upsell_{it} & = & U(\Rank_{it}). \label{upsell}
 \end{eqnarray}
 The first term $\Base_{it}$ accounts for the profits from the sale of
@@ -1078,8 +1078,8 @@ current rank and the distribution of competitors' prices, and computes
 the new desired price. If the new desired price is different from the
 current price and the costs of changing it are justified, then he
 enters it in the Pricewatch form, and changes it on his own website,
-again involving costs in terms of cognition and time. We will call this
-second behavior ``price change.''
+again involving costs in terms of cognition and time. We will call
+this second step ``price changing.''
 
 The two-step process can account for periods of excess inertia, during
 which the manager keeps price constant even though market conditions
@@ -1170,7 +1170,7 @@ well as periods of intense monitoring, in which several price changes
 may follow in succession, followed by periods of inattention during
 which price stays constant independent of market conditions.
 Including this variable can help us tease out time dependence from
-state dependence in price monitoring behavior.  
+state dependence in price monitoring behavior.
 
 Conditional on monitoring, the manager may decide to change price
 based on the information acquired. Let $\Delta_{it}^* = \Price_{it}^*
@@ -1201,15 +1201,15 @@ the actual $\Delta_{it}^*$ by specifying cut points along the real
 line
 \begin{equation}
 \label{C}
-\cdots < \cut{-5} < \cut{-4} < \cut{-3} < \cut{-2} < \cut{-1} < \cut{1} 
-< \cut{2} < \cut{3} < \cut{4} < \cut{5} < \cdots .
+\cdots < \cut{-5} < \cut{-4} < \cut{-3} < \cut{-2} < \cut{-1} <
+\cut{1} < \cut{2} < \cut{3} < \cut{4} < \cut{5} < \cdots .
 \end{equation}
 Then
 \begin{equation}
 \label{pricechange}
-\Delta_{it} = \begin{cases}
-k & \text{if $\Delta_{it}^* \in \bigl( \cut{k}, \cut{k+1} \bigr)$,} \\[1ex]
--k & \text{if $\Delta_{it}^* \in \bigl( \cut{-(k+1)}, \cut{-k} \bigr)$.}
+\Delta_{it} = \begin{cases} 
+k & \text{if $\Delta_{it}^* \in \bigl( \cut{k}, \cut{k+1} \bigr)$,} \\[1ex] 
+-k & \text{if $\Delta_{it}^*  \in \bigl( \cut{-(k+1)}, \cut{-k} \bigr)$.}
 \end{cases}
 \end{equation}
 Thus, for example, an observed price increase of \$1 corresponds to a
@@ -1283,29 +1283,30 @@ strategy model is sufficient to describe firms' behavior. Firms could
 have executed much more complex strategies, including nonlinear
 functions of the included variables, interactions of them, and
 additional variables such as the characteristics of neighboring firms
-in the Pricewatch ranking. More generally, one might worry whether a
-reduced-form policy function could ever capture the intricacies
-involved in full-blown expected value maximization each period and
-therefore suggest some more flexible methods such as a random forest
-model taking many possible inputs all in once, which can mostly nest
-our two-stage model. 
+in the Pricewatch ranking. One might worry whether a parametric policy
+function could adequately capture the intricacies involved in
+full-blown expected-value maximization each period, perhaps calling
+for more flexible methods such as random forests, which can
+systematically process a range of possible covariates and specifications,
+nesting our two-stage model.
 
-We argue that our approach still has some appeal in our empirical
-setting. First, our approach is computationally much less burdensome
-than a fully rational model. Second, it is reasonable to suppose
-managers used fairly simple rules of thumb to make the high-frequency
-decisions to monitor and change price rather than continually
-evaluating expected value functions based on scores of state variables
-each period. Such calculations would overwhelm the direct cost of
-checking websites and calculating and typing in new prices involved in
-the managerial actions.  Third, as discussed in
+We argue that our approach still has a number of appealing features in
+our empirical setting. First, our approach is computationally much
+less burdensome than a fully rational model. Second, it is reasonable
+to suppose managers used fairly simple rules of thumb to make the
+high-frequency decisions to monitor and change price rather than
+continually evaluating expected value functions based on scores of
+state variables each period. Such calculations would overwhelm the
+direct cost of checking websites and calculating and typing in new
+prices involved in the managerial actions.  Third, as discussed in
 Section~\ref{ss:Policy_Fit}, we have encouraging results from a
 goodness of fit test to determine the match between simulations from
-our estimated strategies and observations in the data. Finally, a random
-forest model, for example, albeit powerful in prediction accuracy, would
-not have as useful interpretations for our structural estimation. We note,
-however, incorporating machine learning methods in dynamic structural
-estimation is a very exciting area to explore in the future.  
+our estimated strategies and observations in the data. Finally,
+flexible machine-learning methods such as random forests are not
+panaceas. Although excellent at prediction, random forests often lack
+the useful economic interpretability of a parametric model. That said, incorporating
+machine-learning methods in dynamic structural estimation is a
+promising area for future research.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1330,21 +1331,20 @@ experiments that the maximum likelihood estimator of the ZIOP performs
 well in finite samples. While we adopted the ZIOP specification and
 chose the variables appearing in the each stage to best reflect our
 understanding of the empirical setting informed by manager interviews,
-formal Vuong (1989) tests of non-nested models reported in 
-Section~\ref{ss:Policy_Fit} support
-the inclusion of a monitoring stage to the price-change equation and
-the support our choice of variables to include in the different
-stages.
+formal Vuong (1989) tests of non-nested models reported in
+Section~\ref{ss:Policy_Fit} support the inclusion of a monitoring
+stage to the price-change equation and the support our choice of
+variables to include in the different stages.
 
-We estimate equations \eqref{monitoring}--\eqref{Z} jointly
-using maximum likelihood taking the errors $e_{it}$ and $u_{it}$ to be
-independent standard normal random variables. 
+We estimate equations \eqref{monitoring}--\eqref{Z} jointly using
+maximum likelihood taking the errors $e_{it}$ and $u_{it}$ to be
+independent standard normal random variables.
 
-Without the monitoring
-stage, the price-change stage of the model would simply be an
-ordered probit, where various intervals would correspond to various
-discrete price changes. With the monitoring stage, the likelihood of
-observations in which firm $i$ does not change price at time $t$ is
+Without the monitoring stage, the price-change stage of the model
+would simply be an ordered probit, where various intervals would
+correspond to various discrete price changes. With the monitoring
+stage, the likelihood of observations in which firm $i$ does not
+change price at time $t$ is
 \begin{equation}
 \label{LF0}
 L(\Delta_{it}=0) = \underbrace{1 - \Phi(X_{it}
@@ -1381,10 +1381,10 @@ need to estimate thresholds down to $\cut{-5}$ and up to $\cut{5}$.
 
 Though the dependent variable $\Monitor_{it}$ in the monitoring
 equation \eqref{monitoring} is not itself observable, the coefficients
-$\alpha_{\tau}$ of this equation can still be estimated because 
-$\Monitor_{it}$ affects the distribution of observed price changes
-or lack thereof through the latent price change equation
-\eqref{latentpricechange}. 
+$\alpha_{\tau}$ in this equation can still be estimated because
+$\Monitor_{it}$ affects the distribution of observed price changes (or
+lack thereof) through the latent price change equation
+\eqref{latentpricechange}.
 
 The monitoring and price-changing equations combine to produce a
 single price change, but the parameters in the separate stages can
@@ -1529,24 +1529,26 @@ Figure~\ref{f:states} provides a more refined assessment of goodness
 of fit. The policy function should not only be able to fit the forward
 history on average across states but also fit the forward history in
 any state $s$ in which the firm finds itself. The figure compares
-simulated to actual profit conditional on various states including
-various initial ranks in the first panel and margins in the second
-panel. (To save space, we just show the results for type~1 firms; the
-fit for types~2 and~3 is similar.)  We focus on profit in this figure
-as opposed to time spent at each rank in the previous figure because
-profit is a convenient summary statistic for the distribution of times
-spent at each rank, allowing us to reduce the dimensionality of the
-graph. While we do not yet have all the components of profit
-$\pi_{it}$ from equation \eqref{profit}---the managerial-cost
-components are of course yet to be structurally estimated---we can
-estimate the first two components $\Base_{it}$ and $\Upsell_{it}$
-using equations \eqref{base} and \eqref{upsell}. Because monetary
-profits are not observed even in the actual data, they have to be
-estimated in both cases---using simulated prices in the former case
-and actual prices in the latter. Because the figure displays the
-results separately for each rank and margin of initial state $s$,
-each average is now taken only over initial observations at the $it$ level that qualify
-for such initial conditions.
+simulated to actual profit conditional on various dimensions of the
+state including various initial ranks in the first panel and initial
+margins in the second panel. (To save space, we just show the results
+for type~1 firms; the fit for types~2 and~3 is similar.)  We focus on
+profit in this figure as opposed to time spent at each rank in the
+previous figure because profit is a convenient summary statistic for
+the distribution of times spent at each rank, allowing us to reduce
+the dimensionality of the graph. While we do not yet have all the
+components of profit $\pi_{it}$ from equation \eqref{profit}---the
+managerial-cost components are of course yet to be structurally
+estimated---we can estimate the first two components $\Base_{it}$ and
+$\Upsell_{it}$ using equations \eqref{base} and
+\eqref{upsell}. Because monetary profits are not observed even in the
+actual data, they have to be estimated in both cases---using simulated
+prices in the former case and actual prices in the latter. The figure
+reports results binned first by rank and then by margin. Each point on
+the graph represents an average taken over $it$ observations whose
+rank or margin at the point of observation (serving as the initial
+state $s$ from which we simulate 720 hours forward) puts it into the
+relevant bin.
 
 Panel~A compares the simulated to actual monetary profit going forward
 for 720 hours conditional on rank in the initial period. The solid
@@ -1607,13 +1609,14 @@ squares where the weights are eigenvalues of a matrix of conditional
 expectations, leading authors to provide a subjective evaluation of
 the level of the $Z$ statistic rather than directly computing its
 $p$-value. We see that the test statistic is enormous for the
-comparison of the OP model omitting monitoring (model D) against any of the ZIOP
-models (models A--C). This suggests that including the monitoring equation produces
-a substantially better fit. The preferred ZIOP specification (model A) has a
-considerable $Z$ statistic of 3.20 and 3.92 when tested against the
-alternatives that either shift (model B) or delete variables (model C) from the monitoring
-equation. This provides suggestive evidence that careful placement of
-the variables in the correct equations matters for fit.
+comparison of the OP model omitting monitoring (model D) against any
+of the ZIOP models (models A--C). This suggests that including the
+monitoring equation produces a substantially better fit. The preferred
+ZIOP specification (model A) has a considerable $Z$ statistic of 3.20
+and 3.92 when tested against the alternatives that either shift (model
+B) or delete variables (model C) from the monitoring equation. This
+provides suggestive evidence that careful placement of the variables
+in the correct equations matters for fit.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -1750,8 +1753,8 @@ monitoring and price-changing rates. Our model avoids this pitfall,
 however: fixing all the other parameters, varying the constant terms
 in $\alpha_\tau$ and $\beta_\tau$ over $(-\infty, \infty)^2$ can
 produce any combination of monitoring and price-changing rates in
-$(0,1)^2$. The true drawback to the restriction $\tilde{\sigma}_i
-\in PF(\alpha_{\tau},\beta_{\tau},\cut{k})$ lies in the possibility of
+$(0,1)^2$. The true drawback to the restriction $\tilde{\sigma}_i \in
+PF(\alpha_{\tau},\beta_{\tau},\cut{k})$ lies in the possibility of
 misspecifying equilibrium strategies, hence the importance of
 establishing good fit of the policy function in
 Section~\ref{ss:Policy_Fit}.
@@ -1881,9 +1884,9 @@ firms may have had other unit costs. Credit-card purchases involve a
 transaction fee, typically 2.25\%. There is also a small chance of
 loss or breakage of the wholesale product. Offsetting these extra
 costs, firms gained extra revenue through the approximately \$3
-difference between actual shipping costs and the \$9.99 they
-commonly charged the consumers. Our presumption is that these extra
-costs and revenues largely cancel each other out, leaving equation
+difference between actual shipping costs and the \$9.99 they commonly
+charged the consumers. Our presumption is that these extra costs and
+revenues largely cancel each other out, leaving equation
 \eqref{profit} as an accurate representation of monetary
 profits. Table~\ref{t:robustness} shows how the structural parameters
 change with alternative specifications of monetary profits.
@@ -2305,26 +2308,25 @@ $\hat{\theta}$, is quite accurate conditional on the first-stage
 estimate $\hat{\sigma}$. The main source of randomness in
 $\hat{\theta}$ therefore is the potential error in the first stage. To
 account for this main source of error, we create 200 bootstrapped
-samples and repeat the whole estimation procedure.
-For each
-  bootstrapped sample $n = 1, \ldots, 200$, we derive a new estimate,
-  $\hat{\sigma}^{(n)}$, of the policy function. For each $n$, we carry
-  out the second-stage using $\hat{\sigma}^{(n)}$ in the place of
-  $\hat{\sigma}$ in \eqref{Q}, \eqref{Q2} and \eqref{penalty} and
-  generate new sets of deviations by perturbing $\hat{\sigma}^{(n)}$.
-  The resulting structural estimates $\hat{\theta}^{(n)}$, to minimize
-  the sum of squared penalties represented by the new $Q$
-  function. Confidence intervals can be constructed from quantiles of
-  the set $\{\hat{\theta}^{(n)} | n = 1,\dots, 200 \}$. We could have
-  used bootstrapping to compute standard errors for the
-  policy-function parameters $\alpha_\tau$, $\beta_\tau$, and
-  $\cut{k}$ reported in Table~\ref{t:policy}. It turns out that these
-  bootstrapped standard errors are quite close to the standard errors
-  from the maximum-likelihood procedure we chose to report. To
-simplify the estimation, we did not incorporate uncertainty in
-$Q(\Rank_{it})$ and $U(\Rank_{it})$ in our standard errors, but we
-note that those expressions were fairly precisely estimated in Ellison
-and Ellison (2009a).
+samples and repeat the whole estimation procedure.  For each
+bootstrapped sample $n = 1, \ldots, 200$, we derive a new estimate,
+$\hat{\sigma}^{(n)}$, of the policy function. For each $n$, we carry
+out the second-stage using $\hat{\sigma}^{(n)}$ in the place of
+$\hat{\sigma}$ in \eqref{Q}, \eqref{Q2} and \eqref{penalty} and
+generate new sets of deviations by perturbing $\hat{\sigma}^{(n)}$.
+The resulting structural estimates $\hat{\theta}^{(n)}$, to minimize
+the sum of squared penalties represented by the new $Q$
+function. Confidence intervals can be constructed from quantiles of
+the set $\{\hat{\theta}^{(n)} | n = 1,\dots, 200 \}$. We could have
+used bootstrapping to compute standard errors for the policy-function
+parameters $\alpha_\tau$, $\beta_\tau$, and $\cut{k}$ reported in
+Table~\ref{t:policy}. It turns out that these bootstrapped standard
+errors are quite close to the standard errors from the
+maximum-likelihood procedure we chose to report. To simplify the
+estimation, we did not incorporate uncertainty in $Q(\Rank_{it})$ and
+$U(\Rank_{it})$ in our standard errors, but we note that those
+expressions were fairly precisely estimated in Ellison and Ellison
+(2009a).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
